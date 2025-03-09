@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman About</title>
-</head>
-
-<body>
+<div class="container mt-5">
+    <img class="rounded-circle object-fit-cover" src="<?= BASE_URL ?>/img/profile.jpg" alt="" width="200" height="200">
     <h1>Halo, nama saya <?= $data["name"] ?>, saya bekerja sebagai <?= $data["work"] ?>, umur saya <?= $data["age"] ?>
     </h1>
-</body>
-
-</html>
+</div>
