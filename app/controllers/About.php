@@ -1,12 +1,21 @@
 <?php
 
-class About{
-    public function index($name = "anonymous", $work = "student"){
-        echo "Perkenalkan nama saya $name, kerja sebagai $work";
-        echo "<br/>";
-        echo "About/index";
+class About extends Controller{
+    public function index($name = "anonymous", $work = "student", $age = "20"){
+        $data = [
+            "name" => $name,
+            "work" => $work,
+            "age" => $age,
+            "title" => "About Me"
+        ];
+        $this->view("templates/header", $data);
+        $this->view("about/index", $data);
+        $this->view("templates/footer");
     }
     public function page(){
-        echo "About/page";
+        $data = ["title" => "Page"];
+        $this->view("templates/header", $data);
+        $this->view("about/page");
+        $this->view("templates/footer");
     }
 }
