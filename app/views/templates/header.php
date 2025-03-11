@@ -20,6 +20,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link active text-light" aria-current="page" href="<?= BASE_URL ?>">Home</a>
                     <a class="nav-link text-light" href="<?= BASE_URL ?>/about">About</a>
+                    <a class="nav-link text-light" href="<?= BASE_URL ?>/mahasiswa">Mahasiswa</a>
                 </div>
             </div>
         </div>

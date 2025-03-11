@@ -1,11 +1,9 @@
 <?php
 
 class About extends Controller{
-    public function index($name = "anonymous", $work = "student", $age = "20"){
+    public function index(){
         $data = [
-            "name" => $name,
-            "work" => $work,
-            "age" => $age,
+            "name" => $this->model("User_model")->getUser(),
             "title" => "About Me"
         ];
         $this->view("templates/header", $data);
