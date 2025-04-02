@@ -11,6 +11,7 @@
                     <th>NIM</th>
                     <th>Major</th>
                     <th>Email</th>
+                    <th>Action</th>
                 </tr>
                 <?php $count = 0 ?>
                 <?php foreach($data["mhs"] as $mhs) : ?>
@@ -20,6 +21,8 @@
                     <td><?= $mhs["nim"] ?></td>
                     <td><?= $mhs["major"] ?></td>
                     <td><?= $mhs["email"] ?></td>
+                    <td><a href="<?= BASE_URL ?>/mahasiswa/detail/<?= $mhs["id"] ?>"
+                            class="badge text-bg-primary">Detail</a></td>
                 </tr>
                 <?php endforeach ?>
 
