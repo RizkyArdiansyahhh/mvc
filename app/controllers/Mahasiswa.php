@@ -21,4 +21,11 @@ class Mahasiswa extends Controller{
         $this->view("mahasiswa/detail", $data);
         $this->view("templates/footer");
     }
+
+    public function insert(){
+        if($this->model("Mahasiswa_model")->insertStudent($_POST) > 0){
+            header("Location: ". BASE_URL . "/mahasiswa");
+            exit;
+        }
+    }
 }
