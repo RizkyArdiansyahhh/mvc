@@ -32,8 +32,13 @@
                     <td><?= $mhs["nim"] ?></td>
                     <td><?= $mhs["major"] ?></td>
                     <td><?= $mhs["email"] ?></td>
-                    <td><a href="<?= BASE_URL ?>/mahasiswa/detail/<?= $mhs["id"] ?>"
-                            class="badge text-bg-primary">Detail</a></td>
+                    <td>
+                        <div class="d-flex"><a href="<?= BASE_URL ?>/mahasiswa/detail/<?= $mhs["id"] ?>"
+                                class="badge text-bg-primary me-2">Detail</a> <a onclick="confirm('apakah anda yakin?')"
+                                href="<?= BASE_URL ?>/mahasiswa/delete/<?= $mhs["id"] ?>"
+                                class="badge text-bg-danger">Hapus</a></div>
+                    </td>
+
                 </tr>
                 <?php endforeach ?>
 

@@ -31,4 +31,14 @@ class Mahasiswa extends Controller{
             Flasher::setFlash("Gagal", "Ditambahkan", "danger");
         }
     }
+
+    public function delete($id){
+        if($this->model("Mahasiswa_model")->deleteStudent($id) > 0){
+            Flasher::setFlash("Berhasil", "Dihapus", "success");
+            header("Location:". BASE_URL . "/mahasiswa");
+            exit;
+        }else{
+            Flasher::setFlash("Gagal", "Dihapus", "danger");
+        }
+    }
 }
