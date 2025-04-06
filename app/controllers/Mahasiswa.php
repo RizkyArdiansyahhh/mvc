@@ -24,8 +24,11 @@ class Mahasiswa extends Controller{
 
     public function insert(){
         if($this->model("Mahasiswa_model")->insertStudent($_POST) > 0){
+            Flasher::setFlash("Berhasil","Ditambahkan", "success");
             header("Location: ". BASE_URL . "/mahasiswa");
             exit;
+        }else{
+            Flasher::setFlash("Gagal", "Ditambahkan", "danger");
         }
     }
 }
