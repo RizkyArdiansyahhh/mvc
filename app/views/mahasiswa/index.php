@@ -7,14 +7,28 @@
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <h1>Daftar Mahasiswa</h1>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary mb-3 btn-add" data-bs-toggle="modal"
                 data-bs-target="#formAddStudent">
                 Add New Student
             </button>
-
-
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-lg-6">
+            <form action="<?= BASE_URL ?>/mahasiswa/search" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search student..." name="keyword" id="keyword"
+                        autocomplete="off">
+                    <button class="btn btn-primary" type="submit" id="btn-search">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <?php if(count($data["mhs"]) > 0) : ?>
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>Daftar Mahasiswa</h1>
 
             <table class="table table-striped">
                 <tr>
@@ -52,6 +66,14 @@
             </table>
         </div>
     </div>
+    <?php else : ?>
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>Data Not Found</h1>
+        </div>
+    </div>
+    <?php endif ?>
+
 </div>
 <!-- Modal -->
 <div class="modal fade" id="formAddStudent" tabindex="-1" aria-labelledby="formAddStudent" aria-hidden="true">

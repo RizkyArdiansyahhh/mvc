@@ -57,4 +57,15 @@ class Mahasiswa extends Controller{
             Flasher::setFlash("Gagal", "Diubah", "danger");
         }
     }
+
+    public function search(){
+        $data = [
+            "title" => "Daftar Mahasiswa",
+            "mhs" => $this->model("Mahasiswa_model")->searchStudents($_POST["keyword"]),
+        ];
+
+        $this->view("templates/header", $data);
+        $this->view("mahasiswa/index", $data);
+        $this->view("templates/footer");
+    }
 }
