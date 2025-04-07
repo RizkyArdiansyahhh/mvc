@@ -9,7 +9,8 @@
         <div class="col-lg-6">
             <h1>Daftar Mahasiswa</h1>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#formAddStudent">
+            <button type="button" class="btn btn-primary mb-3 btn-add" data-bs-toggle="modal"
+                data-bs-target="#formAddStudent">
                 Add New Student
             </button>
 
@@ -33,10 +34,16 @@
                     <td><?= $mhs["major"] ?></td>
                     <td><?= $mhs["email"] ?></td>
                     <td>
-                        <div class="d-flex"><a href="<?= BASE_URL ?>/mahasiswa/detail/<?= $mhs["id"] ?>"
-                                class="badge text-bg-primary me-2">Detail</a> <a onclick="confirm('apakah anda yakin?')"
+                        <div class="d-flex">
+                            <a href="<?= BASE_URL ?>/mahasiswa/detail/<?= $mhs["id"] ?>"
+                                class="badge text-bg-primary me-2">Detail</a>
+                            <a href="<?= BASE_URL ?>/mahasiswa/edit/<?= $mhs["id"] ?>"
+                                class="badge text-bg-warning me-2 btn-edit" data-bs-toggle="modal"
+                                data-bs-target="#formAddStudent" data-id=<?= $mhs["id"] ?>>Edit</a>
+                            <a onclick="confirm('apakah anda yakin?')"
                                 href="<?= BASE_URL ?>/mahasiswa/delete/<?= $mhs["id"] ?>"
-                                class="badge text-bg-danger">Hapus</a></div>
+                                class="badge text-bg-danger">Hapus</a>
+                        </div>
                     </td>
 
                 </tr>
@@ -56,7 +63,8 @@
             </div>
             <form action="<?= BASE_URL ?>/mahasiswa/insert" method="post">
                 <div class="modal-body">
-                    <div class="mb-3">
+                    <input type="hidden" name="id" id="id">
+                    <div class=" mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="name" name="name">
                     </div>
@@ -68,7 +76,7 @@
                         <label for="nim" class="form-label">NIM</label>
                         <input type="number" class="form-control" id="nim" name="nim">
                     </div>
-                    <select class="form-select" aria-label="Default select example" name="major">
+                    <select id="major" class=" form-select" aria-label="Default select example" name="major">
                         <option selected>Major</option>
                         <option value="Sistem Informasi">Sistem Informasi</option>
                         <option value="Statistika">Statistika</option>
